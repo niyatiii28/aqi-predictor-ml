@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AQI Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌫️ AQI Prediction System</h1>
+
+    <form action="/predict" method="post">
+        <input type="number" step="any" name="pm25" placeholder="PM2.5" required>
+        <input type="number" step="any" name="pm10" placeholder="PM10" required>
+        <input type="number" step="any" name="no2" placeholder="NO2" required>
+        <input type="number" step="any" name="so2" placeholder="SO2" required>
+        <input type="number" step="any" name="co" placeholder="CO" required>
+        <input type="number" step="any" name="o3" placeholder="O3" required>
+
+        <button type="submit">Predict AQI</button>
+    </form>
+
+    <h2>{{ prediction_text }}</h2>
+</div>
+
+</body>
+</html>
